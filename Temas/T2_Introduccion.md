@@ -1,3 +1,4 @@
+```{.isabelle}
 theory T2_Introduccion
 imports Main
 begin
@@ -52,3 +53,4 @@ term "h (%x. f(g x))"
 term "%x. x + x"
 
 end
+```

@@ -75,8 +75,10 @@
   + Operadores mixfijos:
     : if _ then _ else _, case _ of, ...
   + Los prefijos tienen prioridad sobre los infijos
-    : f x + y ≡ (f x) + y
-    : f x + y ≢ f (x + y)
+    #+BEGIN_QUOTE
+    f x + y ≡ (f x) + y
+    f x + y ≢ f (x + y)
+    #+END_QUOTE
   + Las expresiones con ~if~ o ~case~ se tienen que escribir entre paréntesis. 
 
 + Teorías de Isabelle
