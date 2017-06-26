@@ -18,6 +18,6 @@
   + Verificación = demostración formal de la corrección.
 
 + Verificaciones destacadas:
-  + Verificación de un compilador de C. Por Xavier Leroy con Coq.
-  + Verificación del núcleo de un sistema operativo (L4). Por Gerwin Klein con
+  + [[http://compcert.inria.fr/doc/][Verificación de un compilador de C]]. Por [[http://pauillac.inria.fr/~xleroy/][Xavier Leroy]] con [[https://coq.inria.fr/][Coq]].
+  + [[http://ts.data61.csiro.au/projects/TS/l4.verified/][Verificación del núcleo de un sistema operativo (L4)]]. Por [[http://www.cse.unsw.edu.au/~kleing/][Gerwin Klein]] con
     Isabelle/HOL. 
