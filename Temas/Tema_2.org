@@ -66,9 +66,9 @@
 
 + Currificación:
   + Definición curryficada 
-    : f :: τ₁ ⇒ τ₂ ⇒ τ 
+    ~f :: τ₁ ⇒ τ₂ ⇒ τ~ 
   + Definición cartesiana 
-    : g :: τ₁ × τ₂ ⇒ τ 
+    ~g :: τ₁ × τ₂ ⇒ τ~ 
 
 + Azúcar sintáctica
   + Operadores infijos:
