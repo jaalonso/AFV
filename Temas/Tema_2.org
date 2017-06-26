@@ -107,8 +107,6 @@
   + Reconoce las teorías de Isabelle por su extensión (~.thy~). 
   + Procesa las teorías de forma síncrona.
 
-+ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]].
++ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]] y [[./T2_Introduccion.md][T2_Introduccion.md]].  
 
-```{.isa}
-   definition x where "x \<equiv> y\<^sup>2"
-```
+
