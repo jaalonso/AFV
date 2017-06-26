@@ -38,4 +38,73 @@
   :     | τ × τ                   pares (en ASCII: *)
   :     | τ list                  listas
   :     | τ set                   conjuntos
-  :    | ...
+  :     | ...                     tipos definidos por el usuario
+
+
++ Sintaxis de términos (del lambda cálculo)
+  : t ::= (t)
+  :     | a       constante o variable 
+  :     | t t     aplicación de funciones
+  :     | λx. t   abstracción de funciones
+  :     | ...     azúcar sintática
+
++ Tipado de términos
+  + Todos los términos tienen un tipos.
+  + ~t :: τ~ significa que "el tipo de ~t~ es ~τ~
+
++ Inferencia de tipo:
+  + Regla de tipos para aplicaciones
+    : t :: τ₁ ⇒ τ₂    u :: τ₁
+    : ——————————————————————–
+    :        t u :: t₂
+  + Isabelle automáticamente calcula el tipo de las variables de los
+    términos. Esto se llama *inferencia de tipos*.
+  + A veces no es posible por la presencia de funciones /sobrecargadas/. 
+  + Las ambigüedades se resuelven con *anotaciones de tipo*. Por ejemplo, 
+    ~f (x::nat)~. 
+
++ Currificación:
+  + Definición curryficada 
+    : f :: τ₁ ⇒ τ₂ ⇒ τ 
+  + Definición cartesiana 
+    : g :: τ₁ × τ₂ ⇒ τ 
+
++ Azúcar sintáctica
+  + Operadores infijos:
+    : +, -, *, #, @, ...
+  + Operadores mixfijos:
+    : if _ then _ else _, case _ of, ...
+  + Los prefijos tienen prioridad sobre los infijos
+    : f x + y ≡ (f x) + y
+    : f x + y ≢ f (x + y)
+  + Las expresiones con ~if~ o ~case~ se tienen que escribir entre paréntesis. 
+
++ Teorías de Isabelle
+  + Las teorías de Isabelle son análogas a los módulos de Haskell.
+  + La sintaxis de una teoría de Isabelle es
+    : theory T
+    : imports T₁ ... Tₙ
+    : begin
+    : (definiciones, teoremas. demostraciones, ...)*
+    : end
+  + ~T~ es el nombre de la teoría (y el nombre de su fichero tiene que ser
+    ~T.thy~)
+  + ~T₁, ..., Tₙ~ son la teorías importadas.
+  + La importación de toerías es transitiva.
+  + El cuerpo de la teoría se compone de definiciones,
+    teoremas. demostraciones, ... 
+  + Usualmente importaremos sólo la teoría ~Main~.
+
++ Sintaxis concreta:
+  + En la teorías se tiene que escribir entre dobles comillas los tipos, los
+    términos y las fórmulas.
+  + Una posible excepción son los identificadores simples.
+
+** El editor sobre jEdit
+
++ Introducción
+  + El editor de Isabelle está construido sobre jEdit.
+  + Reconoce las teorías de Isabelle por su extensión (~.thy~). 
+  + Procesa las teorías de forma síncrona.
+
++ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]].
