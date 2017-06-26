@@ -16,5 +16,5 @@
   + tipos de datos
 
 + Fórmulas de HOL:
-  + Inicialmente sólo consideraremos ecuaciones de la forma $t = s$ donde $t$ y
-    $s$ son términos. 
+  + Inicialmente sólo consideraremos ecuaciones de la forma ~t = s~ donde ~t~ y
+    ~s~ son términos. 
