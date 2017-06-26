@@ -72,14 +72,12 @@
 
 + Azúcar sintáctica
   + Operadores infijos:
-    : +, -, *, #, @, ...
+    ~+, -, *, #, @, ...~
   + Operadores mixfijos:
-    : if _ then _ else _, case _ of, ...
+   ~if _ then _ else _, case _ of, ...~
   + Los prefijos tienen prioridad sobre los infijos
-    #+BEGIN_EXAMPLE
-    f x + y ≡ (f x) + y
-    f x + y ≢ f (x + y)
-    #+END_EXAMPLE
+    + ~f x + y ≡ (f x) + y~
+    + ~f x + y ≢ f (x + y)~
   + Las expresiones con ~if~ o ~case~ se tienen que escribir entre paréntesis. 
 
 + Teorías de Isabelle
