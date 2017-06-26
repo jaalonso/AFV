@@ -9,6 +9,8 @@
 
 * Visión panorámica de Isabelle/HOL
 
+** HOL: Lógica de orden superior
+
 + Las siglas HOL (del inglés, /Higher-Order Logic/) significa "Lógica de orden
   superior". 
 
@@ -23,6 +25,17 @@
 
 + Fórmulas de HOL:
   + Inicialmente sólo consideraremos ecuaciones de la forma ~t = s~ donde ~t~ y
-    ~s~ son términos. 
+    ~s~ son términos.
+  + Más adelante se añadirán conectivas y cuantificadores.
 
+** Tipos y términos 
 
++ Sintaxis de tipos
+  : τ ::= (τ)
+  :     | bool | nat | int ...    tipos básicos 
+  :     | 'a | 'b | ...           variables de tipos
+  :     | τ ⇒ τ                   funciones
+  :     | τ × τ                   pares (en ASCII: *)
+  :     | τ list                  listas
+  :     | τ set                   conjuntos
+  :    | ...
