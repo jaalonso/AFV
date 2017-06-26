@@ -19,6 +19,7 @@ los trabajos anteriores son
 
 * Temas
 + [[./Temas/Tema_1.org][Tema 1: Introducción]].
++ [[./Temas/Tema_2.org][Tema 2: Programación y demostración]].
 
 * Ejercicios
 

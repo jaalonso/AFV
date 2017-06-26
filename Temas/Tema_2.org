@@ -1,0 +1,20 @@
+#+TITLE: Tema 2: Programación y demostración
+#+LANGUAGE: es
+
+* Visión panorámica de Isabelle/HOL
+
++ Las siglas HOL (del inglés, /Higher-Order Logic/) significa "Lógica de orden
+  superior". 
+
++ Ecuación fundamental de HOL:
+  + HOL = Programación funcional + Lógica
+
++ HOL, como lenguaje de programación, dispone de
+  + operadores lógicos
+  + funciones recursivas
+  + funciones de orden superior
+  + tipos de datos
+
++ Fórmulas de HOL:
+  + Inicialmente sólo consideraremos ecuaciones de la forma $t = s$ donde $t$ y
+    $s$ son términos. 
