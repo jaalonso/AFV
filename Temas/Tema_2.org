@@ -108,3 +108,7 @@
   + Procesa las teorías de forma síncrona.
 
 + Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]].
+
+```{.isa}
+   definition x where "x \<equiv> y\<^sup>2"
+```
