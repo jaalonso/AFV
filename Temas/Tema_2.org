@@ -1,6 +1,12 @@
 #+TITLE: Tema 2: Programación y demostración
 #+LANGUAGE: es
 
+#+BEGIN_HTML
+       <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+#+END_HTML
+
 * Visión panorámica de Isabelle/HOL
 
 + Las siglas HOL (del inglés, /Higher-Order Logic/) significa "Lógica de orden
@@ -16,5 +22,5 @@
   + tipos de datos
 
 + Fórmulas de HOL:
-  + Inicialmente sólo consideraremos ecuaciones de la forma ~t = s~ donde ~t~ y
+  + Inicialmente sólo consideraremos ecuaciones de la forma $t = s$ donde ~t~ y
     ~s~ son términos. 
