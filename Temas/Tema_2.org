@@ -50,7 +50,8 @@
 
 + Tipado de términos
   + Todos los términos tienen un tipos.
-  + ~t :: τ~ significa que "el tipo de ~t~ es ~τ~
+  + 
+    ~t :: τ~ significa que "el tipo de ~t~ es ~τ~
 
 + Inferencia de tipo:
   + Regla de tipos para aplicaciones
