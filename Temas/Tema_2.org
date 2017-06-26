@@ -22,7 +22,7 @@
   + tipos de datos
 
 + Fórmulas de HOL:
-  + Inicialmente sólo consideraremos ecuaciones de la forma \(t = s\) donde ~t~ y
+  + Inicialmente sólo consideraremos ecuaciones de la forma ~t = s~ donde ~t~ y
     ~s~ son términos. 
 
-+ \begin{equation} ∫^x_0 x^2 dx = \frac{x^3}{3} \end{equation}
+
