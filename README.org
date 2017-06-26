@@ -17,19 +17,22 @@ los trabajos anteriores son
 + [[http://www.cambridge.org/de/academic/subjects/computer-science/programming-languages-and-applied-logic/purely-functional-data-structures?format=PB&isbn=9780521663502][Purely functional data structures]] por C. Okasaki
 + [[https://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html][Algorithms: A functional programming approach]] por F. Rabhi y G. Lapalme 
 
+* Temas
++ [[./Temas/Tema_1.org][Tema 1: Introducción]].
+
 * Ejercicios
 
-+ [[./Ejercicios/R01Sol.thy][Ejercicio 1]]:
-  + Cálculo con números naturales.
-  + Propiedades de los números naturales.
-  + Ocurrencias de un elemento en una lista.
-  + Añadiendo los elementos al final de la lista e inversa.
+** [[./Ejercicios/R01Sol.thy][Ejercicio 1]]:
++ Cálculo con números naturales.
++ Propiedades de los números naturales.
++ Ocurrencias de un elemento en una lista.
++ Añadiendo los elementos al final de la lista e inversa.
 
-+ [[./Ejercicios/R02Sol.thy][Ejercicio 2]]:
-  + Plegados sobre árboles.
-  + Alineamientos de lista.
-  + Plegado de listas.
-  + Lista con elementos distintos.  
-  + Plegados de listas por la derecha y por la izquierda.
-
+** [[./Ejercicios/R02Sol.thy][Ejercicio 2]]:
++ Plegados sobre árboles.
++ Alineamientos de lista.
++ Plegado de listas.
++ Lista con elementos distintos.  
++ Plegados de listas por la derecha y por la izquierda.
++ Cortes de listas.
 

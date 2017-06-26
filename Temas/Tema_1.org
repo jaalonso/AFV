@@ -1,0 +1,23 @@
+#+TITLE: Tema 1: Introducción
+#+LANGUAGE: es
+
++ El objetivo de curso razonar sobre la corrección y complejidad de algoritmos
+  funcionales con la asistencia de Isabelle/HOL.
+
++ El papel de los asistentes de demostración:
+  + el humano escribe la estructura de las pruebas
+  + el asistente comprueba la corrección de cada paso.
+
++ Advertencias sobre el uso de los asistentes de prueba:
+  + Requiere más tiempo que las demostraciones informales.
+  + Puede ser adictivo.
+  + Mina la confianza en las demostraciones informales.
+
++ Terminología:
+  + Formal = verificado por el ordenador.
+  + Verificación = demostración formal de la corrección.
+
++ Verificaciones destacadas:
+  + Verificación de un compilador de C. Por Xavier Leroy con Coq.
+  + Verificación del núcleo de un sistema operativo (L4). Por Gerwin Klein con
+    Isabelle/HOL. 
