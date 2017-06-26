@@ -1,0 +1,35 @@
+#+TITLE: Algorítmica funcional verificada (AFV)
+#+OPTIONS: toc:nil 
+
+El objetivo de este trabajo es verifica con Isabelle/HOL la segunda parte del
+curso de [[https://www.cs.us.es/~jalonso/cursos/i1m/temas.php][I1M]]. Más concretamente, los temas 14 a 22 dedicados a la
+representación funcional de estructuras de datos.
+
+Dos trabajos con semejantes objetivos son:
++ el curso [[http://www21.in.tum.de/teaching/FDS/SS17/][Functional data structures (Summer semester 2017)]],
+  impartido por Peter Lammich y Tobias Nipkow en la Universidad Técnica de
+  Munich, en el que verifican con Isabelle/HOL algunas estructuras de datos. 
++ el trabajo de Andrew W. Appel [[https://www.cs.princeton.edu/~appel/vfa/][Verified functional algorithms]] en el que
+  verifica con Coq algunos algoritmos funcionales.
+
+Los libros con aproximaciones funcionales a la algorítmica en la que se basan
+los trabajos anteriores son
++ [[http://www.cambridge.org/de/academic/subjects/computer-science/programming-languages-and-applied-logic/purely-functional-data-structures?format=PB&isbn=9780521663502][Purely functional data structures]] por C. Okasaki
++ [[https://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html][Algorithms: A functional programming approach]] por F. Rabhi y G. Lapalme 
+
+* Ejercicios
+
++ [[./Ejercicios/R01Sol.thy][Ejercicio 1]]:
+  + Cálculo con números naturales.
+  + Propiedades de los números naturales.
+  + Ocurrencias de un elemento en una lista.
+  + Añadiendo los elementos al final de la lista e inversa.
+
++ [[./Ejercicios/R02Sol.thy][Ejercicio 2]]:
+  + Plegados sobre árboles.
+  + Alineamientos de lista.
+  + Plegado de listas.
+  + Lista con elementos distintos.  
+  + Plegados de listas por la derecha y por la izquierda.
+
+
