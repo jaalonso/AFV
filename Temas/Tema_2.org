@@ -1,12 +1,6 @@
 #+TITLE: Tema 2: Programación y demostración
 #+LANGUAGE: es
 
-#+BEGIN_HTML
-       <script type="text/javascript"
-          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-      </script>
-#+END_HTML
-
 * Visión panorámica de Isabelle/HOL
 
 ** HOL: Lógica de orden superior
@@ -101,7 +95,7 @@
     términos y las fórmulas.
   + Una posible excepción son los identificadores simples.
 
-** El editor sobre jEdit
+** El entorno jEdit
 
 + Introducción
   + El editor de Isabelle está construido sobre jEdit.
@@ -110,4 +104,25 @@
 
 + Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]] y [[./T2_Introduccion.md][T2_Introduccion.md]].  
 
+** Los tipos ~bool~, ~nat~ y ~list~
 
++ El tipo ~bool~
+  + ~bool~ es el tipo de los booleanos
+  + Está definido por \\
+    ~datatype bool = True | False~
+  + Funciones predefinidas: \\
+    ~∧, ∨, →, ... :: bool ⇒ bool ⇒ bool~
+  + Las *fórmulas* son los términos de tipo ~bool~.
+  + El bicondicional es ~=~.   
+
++ El tipo ~nat~
+  + ~nat~ es el tipo de los números naturales.
+  + Está definido por \\
+    ~datatype nat = 0 | Suc nat~
+  + Ejemplos de valores de tipo ~nat~
+    ~0, Suc 0, Suc (Suc 0), ...~
+  + Funciones predefinidas \\
+    ~+, ∗, ... :: nat ⇒ nat ⇒ nat~    
+  + Los números y las operaciones aritméticas están sobrecargadas: \\
+    ~0, 1, 2, ... :: 'a~ \\ 
+    ~+ :: 'a ⇒ 'a ⇒ 'a~ 
