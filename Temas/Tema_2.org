@@ -7,6 +7,7 @@
    - [[#tipos-y-términos-][Tipos y términos ]]
    - [[#los-tipos-bool-nat-y-list][Los tipos bool, nat y list]]
    - [[#tipos-numéricos][Tipos numéricos]]
+   - [[#resumen][Resumen]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -209,4 +210,44 @@
   + Valor absoluto: 
     ~abs :: 'a ⇒ 'a~
     
+** Resumen
+
++ Definiciones de tipos y de funciones:
+  + *datatype* se usa para definir tipos de datos (posiblemente recursivos). 
+  + *fun* se usa para definir funciones (posiblemente recursivas y con
+    patrones sobre los constructores).
+
++ Métodos de demostración:
+  + *(induction x)* aplica inducción estructural sobre la variable x cuyo tipo
+    es recursivo.
+  + *simp* aplica simplificaciones al objetivo actual.
+  + *auto* aplica simplificaciones (y algunas otras transformaciones) a todos
+    los objetivos.
+
++ Enunciado de propiedades:
+  + *lemma* nombre: "..."
+  + *lemma* nombre [simp]: "..."
+
++ Esquema general de pruebas:
+  #+BEGIN_QUOTE
+  lemma nombre: "..."
+  apply (...)
+  apply (...)
+  ...
+  done
+  #+END_QUOTE 
+
++ Finales de pruebas:
+  + *done* para terminar la demostración
+  + *oops* para abandonar la demostración
+  + *sorry* para abandonar la demostración pero pudiendo usar el lema y
+    demostrarlo posteriormente.
+
++ Los estados de prueba son de la forma
+  + ⋀x1 ... xp. A ⟹ B
+  donde
+  | x1, ..., xp | son las variables locales |
+  | A           | son los supuestos locales |
+  | B           | es el subobjetivo actual  |
+ 
   
