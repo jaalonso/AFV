@@ -1,7 +1,7 @@
 #+TITLE: Tema 2: Programación y demostración
 #+LANGUAGE: es
 
-:TOC_2_gh: 
+* Contenido :TOC_2_gh: 
 
 * Visión panorámica de Isabelle/HOL
 
