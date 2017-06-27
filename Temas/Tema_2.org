@@ -144,7 +144,7 @@
     + Ejemplo de demostración pos inducción sobre los naturales. 
  
 + El tipo ~list~
-  + 'a list es el tipo de las listas con elementos de tipo ~'a~.
+  + 'a list es el tipo de las listas con elementos de tipo 'a.
   + Está definido por \\
     ~datatype 'a list = Nil | Cons 'a ('a list)~
   + Ejemplos listas: 
