@@ -250,4 +250,7 @@
   | A           | son los supuestos locales |
   | B           | es el subobjetivo actual  |
  
-  
++ Supuestos múltiples
+  + [| A1 ; ... ; An |] ⟹ B
+  es una abreviatura de
+  + A1 ⟹ ... ⟹ An ⟹ B
