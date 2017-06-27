@@ -6,6 +6,7 @@
    - [[#hol-lógica-de-orden-superior][HOL: Lógica de orden superior]]
    - [[#tipos-y-términos-][Tipos y términos ]]
    - [[#los-tipos-bool-nat-y-list][Los tipos bool, nat y list]]
+   - [[#tipos-numéricos][Tipos numéricos]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -164,5 +165,48 @@
       + Funciones sobre listas: conc e inversa.
       + Ejemplo de búqueda descendente de la demostración de 
         "inversa (inversa xs) = xs".
+    + Funciones predefinidas sobre listas: ~length~, ~@~, ~rev~, ~map~, ...
 
-     
+** Tipos numéricos
+
++ Tipos numéricos: nat, int, real
+  + nat es el tipo de los números naturales.
+  + int es el tipo de los números enteros.
+  + real es el tipo de los números reales.
+
++ Funciones de conversión de tipo:
+  #+BEGIN_EXAMPLE
+  int         :: nat ⇒ int
+  real        :: nat ⇒ real
+  real_of_int :: int ⇒ real
+  nat         :: int ⇒ nat
+  floor       :: real ⇒ int
+  ceiling     :: real ⇒ int
+  #+END_EXAMPLE
+
++ Para usar los números reales se necesita importar la teoría ~Complex_Main~ en
+  lugar de ~Main~.
+
++ Isabelle, con ~Complex_Main~, convierte los tipos automáticamente. Por
+  ejemplo, \\
+  "(3::int) + (2::nat)"  da "5" :: "int" 
+
++ Operaciones aritméticas
+  + Las operaciones aritméticas están sobrecargadas.
+  + Operaciones básicas:
+    + binarias:
+      ~+, −, ∗ :: 'a ⇒ 'a ⇒ 'a~
+    + monaria:
+      ~− :: 'a ⇒ 'a~
+  + División para ~nat~ e ~int~:
+    ~div, mod :: 'a ⇒ 'a ⇒ 'a~
+  + División para ~real~: 
+    ~/ :: 'a ⇒ 'a ⇒ 'a~
+  + Potencia: 
+    ~ˆ :: 'a ⇒ nat ⇒ 'a~
+  + Exponenciación: 
+    ~powr :: 'a ⇒ 'a ⇒ 'a~
+  + Valor absoluto: 
+    ~abs :: 'a ⇒ 'a~
+    
+  
