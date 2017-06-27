@@ -102,7 +102,12 @@
   + Reconoce las teorías de Isabelle por su extensión (~.thy~). 
   + Procesa las teorías de forma síncrona.
 
-+ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]] y [[./T2_Introduccion.md][T2_Introduccion.md]].  
++ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]].
+  + Comentarios 
+  + Inferencia de tipo 
+  + Evaluación de términos 
+  + Ejemplos de sobrecarga 
+  + Ejemplos de errores de tipo 
 
 ** Los tipos ~bool~, ~nat~ y ~list~
 
@@ -130,5 +135,30 @@
       ~+ :: 'a ⇒ 'a ⇒ 'a~ 
   + Para resolver las ambigüedades se usan anotaciones:
     ~1::nat, x + (y::nat)~
-  + Demo: [[./T2_Demo_Nat.thy][T2_Demo_Nat.thy]] y [[./T2_Demo_Nat.md][T2_Demo_Nat.md]].
-    
+  + Demo: [[./T2_Demo_Nat.thy][T2_Demo_Nat.thy]].
+    + Ejemplo de definición recursiva sobre los naturales: suma.
+    + Ejemplo de demostración pos inducción sobre los naturales. 
+ 
++ El tipo ~'a list~
+  + ~'a list~ es el tipo de las listas con elementos de tipo ~'a~.
+  + Está definido por \\
+    ~datatype 'a list = Nil | Cons 'a ('a list)~
+  + Ejemplos listas: 
+    ~Nil, Cons 1 Nil, Cons 1 (Cons 2 Nil), ...~
+  + Azúcar sintáctica:
+    + ~[]~ es una abreviatura de ~Nil~ (la lista vacía).
+    + ~x#xs~ es una abreviatura de ~Cons x xs~ (la lista cuyo primer elemento
+      es ~x~ y su resto es ~xs~).
+    + ~[x1,...,xn]~ es una abreviatura de ~x1 # (x2 #...# (xn # []))~ (la lista
+      cuyos elementos son ~x1~, ..., ~xn~).
+    + Esquema de inducción sobre listas: Para probar que todas las listas
+      cumplen una propiedad P, basta probar que
+      + P([])
+      + si P(xs) entonces P(x#xs), para todos x, xs.
+    + Demo: [[./T2_Demo_Lista.thy][T2_Demo_Lista.thy]].
+      + El tipo de las listas.
+      + Funciones sobre listas: conc e inversa.
+      + Ejemplo de búqueda descendente de la demostración de 
+        "inversa (inversa xs) = xs".
+
+     
