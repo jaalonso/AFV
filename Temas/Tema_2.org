@@ -1,6 +1,8 @@
 #+TITLE: Tema 2: Programación y demostración
 #+LANGUAGE: es
 
+:TOC_2_gh: 
+
 * Visión panorámica de Isabelle/HOL
 
 ** HOL: Lógica de orden superior
@@ -95,9 +97,7 @@
     términos y las fórmulas.
   + Una posible excepción son los identificadores simples.
 
-** El entorno jEdit
-
-+ Introducción
++ El entorno jEdit
   + El editor de Isabelle está construido sobre jEdit.
   + Reconoce las teorías de Isabelle por su extensión (~.thy~). 
   + Procesa las teorías de forma síncrona.
