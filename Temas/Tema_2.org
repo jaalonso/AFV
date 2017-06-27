@@ -124,5 +124,5 @@
   + Funciones predefinidas \\
     ~+, ∗, ... :: nat ⇒ nat ⇒ nat~    
   + Los números y las operaciones aritméticas están sobrecargadas: \\
-    ~0, 1, 2, ... :: 'a~ \\\\
-    ~+ :: 'a ⇒ 'a ⇒ 'a~ 
+    + ~0, 1, 2, ... :: 'a~ 
+    + ~+ :: 'a ⇒ 'a ⇒ 'a~ 
