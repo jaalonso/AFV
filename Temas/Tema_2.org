@@ -143,8 +143,8 @@
     + Ejemplo de definición recursiva sobre los naturales: suma.
     + Ejemplo de demostración pos inducción sobre los naturales. 
  
-+ El tipo ~'a list~
-  + ~'a list~ es el tipo de las listas con elementos de tipo ~'a~.
++ El tipo ~list~
+  + 'a list es el tipo de las listas con elementos de tipo ~'a~.
   + Está definido por \\
     ~datatype 'a list = Nil | Cons 'a ('a list)~
   + Ejemplos listas: 
