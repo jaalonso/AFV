@@ -5,7 +5,7 @@
  - [[#visión-panorámica-de-isabellehol][Visión panorámica de Isabelle/HOL]]
    - [[#hol-lógica-de-orden-superior][HOL: Lógica de orden superior]]
    - [[#tipos-y-términos-][Tipos y términos ]]
-   - [[#los-tipos-bool-nat-y-list][Los tipos ~bool~, ~nat~ y ~list~]]
+   - [[#los-tipos-bool-nat-y-list][Los tipos bool, nat y list]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -113,7 +113,7 @@
   + Ejemplos de sobrecarga 
   + Ejemplos de errores de tipo 
 
-** Los tipos ~bool~, ~nat~ y ~list~
+** Los tipos bool, nat y list
 
 + El tipo ~bool~
   + ~bool~ es el tipo de los booleanos
