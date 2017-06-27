@@ -229,13 +229,13 @@
   + *lemma* nombre [simp]: "..."
 
 + Esquema general de pruebas:
-  #+BEGIN_QUOTE
+  #+BEGIN_EXAMPLE
   lemma nombre: "..."
   apply (...)
   apply (...)
   ...
   done
-  #+END_QUOTE 
+  #+END_EXAMPLE
 
 + Finales de pruebas:
   + *done* para terminar la demostración
@@ -244,7 +244,7 @@
     demostrarlo posteriormente.
 
 + Los estados de prueba son de la forma
-  + ⋀x1 ... xp. A ⟹ B
+  | ⋀x1 ... xp. A ⟹ B |
   donde
   | x1, ..., xp | son las variables locales |
   | A           | son los supuestos locales |
