@@ -8,6 +8,8 @@
    - [[#los-tipos-bool-nat-y-list][Los tipos bool, nat y list]]
    - [[#tipos-numéricos][Tipos numéricos]]
    - [[#resumen][Resumen]]
+ - [[#definiciones-de-tipos-y-funciones][Definiciones de tipos y funciones]]
+   - [[#definiciones-de-tipos][Definiciones de tipos]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -244,13 +246,20 @@
     demostrarlo posteriormente.
 
 + Los estados de prueba son de la forma
-  | ⋀x1 ... xp. A ⟹ B |
+  | ⋀x1 ... xp. A ⟹ B  |
   donde
   | x1, ..., xp | son las variables locales |
   | A           | son los supuestos locales |
   | B           | es el subobjetivo actual  |
  
 + Supuestos múltiples
-  + [| A1 ; ... ; An |] ⟹ B
-  es una abreviatura de
-  + A1 ⟹ ... ⟹ An ⟹ B
+  |〚 A₁ ; ... ; Aₙ 〛 ⟹ B | 
+  es una abreviatura de  
+  | A₁ ⟹ ... ⟹ Aₙ ⟹ B |
+
+* Definiciones de tipos y funciones
+
+** Definiciones de tipos
+
+
+
