@@ -128,3 +128,7 @@
       ~0, 1, 2, ... :: 'a~ 
     + 
       ~+ :: 'a ⇒ 'a ⇒ 'a~ 
+  + Para resolver las ambigüedades se usan anotaciones:
+    ~1::nat, x + (y::nat)~
+  + Demo: [[./T2_Demo_Nat.thy][T2_Demo_Nat.thy]] y [[./T2_Demo_Nat.md][T2_Demo_Nat.md]].
+    
