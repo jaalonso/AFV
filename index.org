@@ -36,8 +36,3 @@ los trabajos anteriores son
 + Lista con elementos distintos.  
 + Plegados de listas por la derecha y por la izquierda.
 + Cortes de listas.
-
-
-Prueba
-
-Probando gh-pages
