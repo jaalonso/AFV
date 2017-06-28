@@ -22,4 +22,3 @@
   + [[http://ts.data61.csiro.au/projects/TS/l4.verified/][Verificación del núcleo de un sistema operativo (L4)]]. Por [[http://www.cse.unsw.edu.au/~kleing/][Gerwin Klein]] con
     [[http://www.cl.cam.ac.uk/research/hvg/Isabelle/index.html][Isabelle/HOL]]. 
 
-Prueba de notación LaTeX \[\alpha_1 = \beta \wedge \gamma\]
