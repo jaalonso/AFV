@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2017-06-28 mié 19:39 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tema 2: Programación y demostración</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="José A. Alonso" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+                       type="text/css"
+                       href="http://www.cs.us.es/~jalonso/cursos/i1m-16/temas/estilo.css"
+                  />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tema 2: Programación y demostración</h1>
+<div id="table-of-contents">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline6">1. Visión panorámica de Isabelle/HOL</a>
+<ul>
+<li><a href="#orgheadline1">1.1. HOL: Lógica de orden superior</a></li>
+<li><a href="#orgheadline2">1.2. Tipos y términos</a></li>
+<li><a href="#orgheadline3">1.3. Los tipos bool, nat y list</a></li>
+<li><a href="#orgheadline4">1.4. Tipos numéricos</a></li>
+<li><a href="#orgheadline5">1.5. Resumen</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline8">2. Definiciones de tipos y funciones</a>
+<ul>
+<li><a href="#orgheadline7">2.1. Definiciones de tipos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">1</span> Visión panorámica de Isabelle/HOL</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> HOL: Lógica de orden superior</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Las siglas HOL (del inglés, <i>Higher-Order Logic</i>) significa "Lógica de orden
+superior".</li>
+
+<li>Ecuación fundamental de HOL:
+<ul class="org-ul">
+<li>HOL = Programación funcional + Lógica</li>
+</ul></li>
+
+<li>HOL, como lenguaje de programación, dispone de
+<ul class="org-ul">
+<li>operadores lógicos</li>
+<li>funciones recursivas</li>
+<li>funciones de orden superior</li>
+<li>tipos de datos</li>
+</ul></li>
+
+<li>Fórmulas de HOL:
+<ul class="org-ul">
+<li>Inicialmente sólo consideraremos ecuaciones de la forma <code>t = s</code> donde <code>t</code> y
+<code>s</code> son términos.</li>
+<li>Más adelante se añadirán conectivas y cuantificadores.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> Tipos y términos</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><p>
+Sintaxis de tipos
+</p>
+<pre class="example">
+τ ::= (τ)
+    | bool | nat | int ...    tipos básicos 
+    | 'a | 'b | ...           variables de tipos
+    | τ ⇒ τ                   funciones
+    | τ × τ                   pares (en ASCII: *)
+    | τ list                  listas
+    | τ set                   conjuntos
+    | ...                     tipos definidos por el usuario
+</pre></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Sintaxis de términos (del lambda cálculo)
+</p>
+<pre class="example">
+t ::= (t)
+    | a       constante o variable 
+    | t t     aplicación de funciones
+    | λx. t   abstracción de funciones
+    | ...     azúcar sintática
+</pre></li>
+
+<li>Tipado de términos
+<ul class="org-ul">
+<li>Todos los términos tienen un tipos.</li>
+<li><code>t :: τ</code> significa que "el tipo de <code>t</code> es <code>τ</code></li>
+</ul></li>
+
+<li>Inferencia de tipo:
+<ul class="org-ul">
+<li><p>
+Regla de tipos para aplicaciones
+</p>
+<pre class="example">
+t :: τ₁ ⇒ τ₂    u :: τ₁
+——————————————————————–
+       t u :: t₂
+</pre></li>
+<li>Isabelle automáticamente calcula el tipo de las variables de los
+términos. Esto se llama <b>inferencia de tipos</b>.</li>
+<li>A veces no es posible por la presencia de funciones <i>sobrecargadas</i>.</li>
+<li>Las ambigüedades se resuelven con <b>anotaciones de tipo</b>. Por ejemplo, 
+<code>f (x::nat)</code>.</li>
+</ul></li>
+
+<li>Currificación:
+<ul class="org-ul">
+<li>Definición curryficada 
+<code>f :: τ₁ ⇒ τ₂ ⇒ τ</code></li>
+<li>Definición cartesiana 
+<code>g :: τ₁ × τ₂ ⇒ τ</code></li>
+</ul></li>
+
+<li>Azúcar sintáctica
+<ul class="org-ul">
+<li>Operadores infijos:
+<code>+, -, *, #, @, ...</code></li>
+<li>Operadores mixfijos:
+<code>if _ then _ else _, case _ of, ...</code></li>
+<li>Los prefijos tienen prioridad sobre los infijos
+<ul class="org-ul">
+<li><code>f x + y ≡ (f x) + y</code></li>
+<li><code>f x + y ≢ f (x + y)</code></li>
+</ul></li>
+<li>Las expresiones con <code>if</code> o <code>case</code> se tienen que escribir entre paréntesis.</li>
+</ul></li>
+
+<li>Teorías de Isabelle
+<ul class="org-ul">
+<li>Las teorías de Isabelle son análogas a los módulos de Haskell.</li>
+<li><p>
+La sintaxis de una teoría de Isabelle es
+</p>
+<pre class="example">
+theory T
+imports T₁ ... Tₙ
+begin
+(definiciones, teoremas. demostraciones, ...)*
+end
+</pre></li>
+<li><code>T</code> es el nombre de la teoría (y el nombre de su fichero tiene que ser
+<code>T.thy</code>)</li>
+<li><code>T₁, ..., Tₙ</code> son la teorías importadas.</li>
+<li>La importación de toerías es transitiva.</li>
+<li>El cuerpo de la teoría se compone de definiciones,
+teoremas. demostraciones, &#x2026;</li>
+<li>Usualmente importaremos sólo la teoría <code>Main</code>.</li>
+</ul></li>
+
+<li>Sintaxis concreta:
+<ul class="org-ul">
+<li>En la teorías se tiene que escribir entre dobles comillas los tipos, los
+términos y las fórmulas.</li>
+<li>Una posible excepción son los identificadores simples.</li>
+</ul></li>
+
+<li>El entorno jEdit
+<ul class="org-ul">
+<li>El editor de Isabelle está construido sobre jEdit.</li>
+<li>Reconoce las teorías de Isabelle por su extensión (<code>.thy</code>).</li>
+<li>Procesa las teorías de forma síncrona.</li>
+</ul></li>
+
+<li>Demo: <a href="./T2_Introduccion.thy">T2<sub>Introduccion.thy</sub></a>.
+<ul class="org-ul">
+<li>Comentarios</li>
+<li>Inferencia de tipo</li>
+<li>Evaluación de términos</li>
+<li>Ejemplos de sobrecarga</li>
+<li>Ejemplos de errores de tipo</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Los tipos bool, nat y list</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>El tipo <code>bool</code>
+<ul class="org-ul">
+<li><code>bool</code> es el tipo de los booleanos</li>
+<li>Está definido por <br  />
+<code>datatype bool = True | False</code></li>
+<li>Funciones predefinidas: <br  />
+<code>∧, ∨, →, ... :: bool ⇒ bool ⇒ bool</code></li>
+<li>Las <b>fórmulas</b> son los términos de tipo <code>bool</code>.</li>
+<li>El bicondicional es <code>=</code>.</li>
+</ul></li>
+
+<li>El tipo <code>nat</code>
+<ul class="org-ul">
+<li><code>nat</code> es el tipo de los números naturales.</li>
+<li>Está definido por <br  />
+<code>datatype nat = 0 | Suc nat</code></li>
+<li>Ejemplos de valores de tipo <code>nat</code>
+    <code>0, Suc 0, Suc (Suc 0), ...</code></li>
+<li>Funciones predefinidas <br  />
+<code>+, ∗, ... :: nat ⇒ nat ⇒ nat</code></li>
+<li>Los números y las operaciones aritméticas están sobrecargadas: <br  />
+<ul class="org-ul">
+<li><code>0, 1, 2, ... :: 'a</code></li>
+<li><code>+ :: 'a ⇒ 'a ⇒ 'a</code></li>
+</ul></li>
+<li>Para resolver las ambigüedades se usan anotaciones:
+<code>1::nat, x + (y::nat)</code></li>
+<li>Demo: <a href="./T2_Demo_Nat.thy">T2<sub>Demo</sub><sub>Nat.thy</sub></a>.
+<ul class="org-ul">
+<li>Ejemplo de definición recursiva sobre los naturales: suma.</li>
+<li>Ejemplo de demostración pos inducción sobre los naturales.</li>
+</ul></li>
+</ul></li>
+
+<li>El tipo <code>list</code>
+<ul class="org-ul">
+<li>'a list es el tipo de las listas con elementos de tipo 'a.</li>
+<li>Está definido por <br  />
+<code>datatype 'a list = Nil | Cons 'a ('a list)</code></li>
+<li>Ejemplos listas: 
+<code>Nil, Cons 1 Nil, Cons 1 (Cons 2 Nil), ...</code></li>
+<li>Azúcar sintáctica:
+<ul class="org-ul">
+<li><code>[]</code> es una abreviatura de <code>Nil</code> (la lista vacía).</li>
+<li><code>x#xs</code> es una abreviatura de <code>Cons x xs</code> (la lista cuyo primer elemento
+es <code>x</code> y su resto es <code>xs</code>).</li>
+<li><code>[x1,...,xn]</code> es una abreviatura de <code>x1 # (x2 #...# (xn # []))</code> (la lista
+cuyos elementos son <code>x1</code>, &#x2026;, <code>xn</code>).</li>
+<li>Esquema de inducción sobre listas: Para probar que todas las listas
+cumplen una propiedad P, basta probar que
+<ul class="org-ul">
+<li>P([])</li>
+<li>si P(xs) entonces P(x#xs), para todos x, xs.</li>
+</ul></li>
+<li>Demo: <a href="./T2_Demo_Lista.thy">T2<sub>Demo</sub><sub>Lista.thy</sub></a>.
+<ul class="org-ul">
+<li>El tipo de las listas.</li>
+<li>Funciones sobre listas: conc e inversa.</li>
+<li>Ejemplo de búqueda descendente de la demostración de 
+"inversa (inversa xs) = xs".</li>
+</ul></li>
+<li>Funciones predefinidas sobre listas: <code>length</code>, <code>@</code>, <code>rev</code>, <code>map</code>, &#x2026;</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.4</span> Tipos numéricos</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Tipos numéricos: nat, int, real
+<ul class="org-ul">
+<li>nat es el tipo de los números naturales.</li>
+<li>int es el tipo de los números enteros.</li>
+<li>real es el tipo de los números reales.</li>
+</ul></li>
+
+<li><p>
+Funciones de conversión de tipo:
+</p>
+<pre class="example">
+int         :: nat ⇒ int
+real        :: nat ⇒ real
+real_of_int :: int ⇒ real
+nat         :: int ⇒ nat
+floor       :: real ⇒ int
+ceiling     :: real ⇒ int
+</pre></li>
+
+<li>Para usar los números reales se necesita importar la teoría <code>Complex_Main</code> en
+lugar de <code>Main</code>.</li>
+
+<li>Isabelle, con <code>Complex_Main</code>, convierte los tipos automáticamente. Por
+ejemplo, <br  />
+"(3::int) + (2::nat)"  da "5" :: "int"</li>
+
+<li>Operaciones aritméticas
+<ul class="org-ul">
+<li>Las operaciones aritméticas están sobrecargadas.</li>
+<li>Operaciones básicas:
+<ul class="org-ul">
+<li>binarias:
+<code>+, −, ∗ :: 'a ⇒ 'a ⇒ 'a</code></li>
+<li>monaria:
+<code>− :: 'a ⇒ 'a</code></li>
+</ul></li>
+<li>División para <code>nat</code> e <code>int</code>:
+<code>div, mod :: 'a ⇒ 'a ⇒ 'a</code></li>
+<li>División para <code>real</code>: 
+<code>/ :: 'a ⇒ 'a ⇒ 'a</code></li>
+<li>Potencia: 
+<code>ˆ :: 'a ⇒ nat ⇒ 'a</code></li>
+<li>Exponenciación: 
+<code>powr :: 'a ⇒ 'a ⇒ 'a</code></li>
+<li>Valor absoluto: 
+<code>abs :: 'a ⇒ 'a</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">1.5</span> Resumen</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Definiciones de tipos y de funciones:
+<ul class="org-ul">
+<li><b>datatype</b> se usa para definir tipos de datos (posiblemente recursivos).</li>
+<li><b>fun</b> se usa para definir funciones (posiblemente recursivas y con
+patrones sobre los constructores).</li>
+</ul></li>
+
+<li>Métodos de demostración:
+<ul class="org-ul">
+<li><b>(induction x)</b> aplica inducción estructural sobre la variable x cuyo tipo
+es recursivo.</li>
+<li><b>simp</b> aplica simplificaciones al objetivo actual.</li>
+<li><b>auto</b> aplica simplificaciones (y algunas otras transformaciones) a todos
+los objetivos.</li>
+</ul></li>
+
+<li>Enunciado de propiedades:
+<ul class="org-ul">
+<li><b>lemma</b> nombre: "&#x2026;"</li>
+<li><b>lemma</b> nombre [simp]: "&#x2026;"</li>
+</ul></li>
+
+<li><p>
+Esquema general de pruebas:
+</p>
+<pre class="example">
+lemma nombre: "..."
+apply (...)
+apply (...)
+...
+done
+</pre></li>
+
+<li>Finales de pruebas:
+<ul class="org-ul">
+<li><b>done</b> para terminar la demostración</li>
+<li><b>oops</b> para abandonar la demostración</li>
+<li><b>sorry</b> para abandonar la demostración pero pudiendo usar el lema y
+demostrarlo posteriormente.</li>
+</ul></li>
+
+<li><p>
+Los estados de prueba son de la forma
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">⋀x1 &#x2026; xp. A ⟹ B</td>
+</tr>
+</tbody>
+</table>
+<p>
+donde
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">x1, &#x2026;, xp</td>
+<td class="org-left">son las variables locales</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">son los supuestos locales</td>
+</tr>
+
+<tr>
+<td class="org-left">B</td>
+<td class="org-left">es el subobjetivo actual</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Supuestos múltiples
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">〚 A₁ ; &#x2026; ; Aₙ 〛 ⟹ B</td>
+</tr>
+</tbody>
+</table>
+<p>
+es una abreviatura de  
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">A₁ ⟹ &#x2026; ⟹ Aₙ ⟹ B</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8"><span class="section-number-2">2</span> Definiciones de tipos y funciones</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">2.1</span> Definiciones de tipos</h3>
+</div>
+</div>
+</div>
+</body>
+</html>

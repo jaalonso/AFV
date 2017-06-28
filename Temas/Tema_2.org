@@ -1,16 +1,6 @@
 #+TITLE: Tema 2: Programación y demostración
 #+LANGUAGE: es
 
-* Contenido                                                        :TOC_2_gh:
- - [[#visión-panorámica-de-isabellehol][Visión panorámica de Isabelle/HOL]]
-   - [[#hol-lógica-de-orden-superior][HOL: Lógica de orden superior]]
-   - [[#tipos-y-términos-][Tipos y términos ]]
-   - [[#los-tipos-bool-nat-y-list][Los tipos bool, nat y list]]
-   - [[#tipos-numéricos][Tipos numéricos]]
-   - [[#resumen][Resumen]]
- - [[#definiciones-de-tipos-y-funciones][Definiciones de tipos y funciones]]
-   - [[#definiciones-de-tipos][Definiciones de tipos]]
-
 * Visión panorámica de Isabelle/HOL
 
 ** HOL: Lógica de orden superior
