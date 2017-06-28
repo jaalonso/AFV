@@ -17,14 +17,6 @@ los trabajos anteriores son
 + [[http://www.cambridge.org/de/academic/subjects/computer-science/programming-languages-and-applied-logic/purely-functional-data-structures?format=PB&isbn=9780521663502][Purely functional data structures]] por C. Okasaki
 + [[https://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html][Algorithms: A functional programming approach]] por F. Rabhi y G. Lapalme 
 
-* Contenido                                                        :TOC_2_gh:
- - [[#temas][Temas]]
-   - [[#tema-1-introducción][Tema 1: Introducción.]]
-   - [[#tema-2-programación-y-demostración][Tema 2: Programación y demostración.]]
- - [[#ejercicios][Ejercicios]]
-   - [[#ejercicio-1][Ejercicio 1]]
-   - [[#ejercicio-2][Ejercicio 2]]
-
 * Temas
 ** [[./Temas/Tema_1.org][Tema 1: Introducción]].
 ** [[./Temas/Tema_2.org][Tema 2: Programación y demostración]].

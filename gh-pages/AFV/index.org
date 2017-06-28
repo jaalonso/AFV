@@ -16,3 +16,4 @@ Los libros con aproximaciones funcionales a la algorítmica en la que se basan
 los trabajos anteriores son
 + [[http://www.cambridge.org/de/academic/subjects/computer-science/programming-languages-and-applied-logic/purely-functional-data-structures?format=PB&isbn=9780521663502][Purely functional data structures]] por C. Okasaki
 + [[https://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html][Algorithms: A functional programming approach]] por F. Rabhi y G. Lapalme 
+
