@@ -261,5 +261,25 @@
 
 ** Definiciones de tipos
 
++ Definiciones con datatype
+  + El caso general de datatype es
+    : datatype (α(1),...,α(n))t = C1 τ(1,1) ...τ(1,n(1))
+    :                           | ...
+    :                           | Ck τ(k,1) ...τ(k,n(k))
+  + El tipo de los constructores es
+    : C(i) :: τ(i,1) ⇒ ... ⇒ τ(i,n(i)) ⇒ (α(1),...,α(n))t
+  + Los valores de los constructores son disjuntos: \\ 
+    Si i ≠ j, entonces ~C(i) ... ≠ C(j) ...~
+  + Los constructores son inyectivos:
+    : (C(i) x1 ,,, x n = C(i) y1 ... yn) = 
+    : (x1 = y1 ∧ ... xn = yn) 
+  + Las definiciones de tipos recursivos con datatype genera reglas de
+    inducción. 
 
-
++ Expresiones case
+  + El caso general de expresiones case es
+    : (case t of pat(1) ⇒ t(1) | ... | pat(n) ⇒ t(n))
+  + Los paréntesis externos son obligatorios,
+  + Si los patrones son complicados, también lo son las demostraciones
+   
++ Demo: [[./T2_Demo_Arbol.thy][T2_Demo_Arbol.thy]].
