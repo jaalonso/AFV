@@ -1,4 +1,4 @@
-theory Intercala.thy
+theory Intercala
 imports Main
 begin
 
@@ -8,7 +8,7 @@ text {* (intercala x ys) es la lista obtenida intercalando x entre los
   elementos de ys. Por ejemplo, 
      intercala a [x,y,z] = [x, a, y, a, z]" by simp
 *} 
-fun intercala :: "'a ⇒ 'a list ⇒ 'a list" 
+fun intercala :: "'a \<Rightarrow> 'a list \<Rightarrow> 'a list" 
 where
   "intercala a []       = []" 
 | "intercala a [x]      = [x]" 
