@@ -283,3 +283,6 @@
   + Si los patrones son complicados, también lo son las demostraciones
    
 + Demo: [[./T2_Demo_Arbol.thy][T2_Demo_Arbol.thy]].
+  + Definición del tipo de datos de árboles 
+  + Demostración de propiedades de árboles   
+  + Ejemplo de función recursiva no primitiva recursiva 
