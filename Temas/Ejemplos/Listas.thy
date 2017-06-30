@@ -1,4 +1,4 @@
-theory T2_Demo_Lista
+theory Listas
 imports Main
 begin
 

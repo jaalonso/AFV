@@ -1,4 +1,4 @@
-theory T2_Demo_Nat
+theory Naturales 
 imports Main
 begin
 

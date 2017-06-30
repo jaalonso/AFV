@@ -1,4 +1,4 @@
-theory T2_Introduccion
+theory Introduccion
 imports Main
 begin
 

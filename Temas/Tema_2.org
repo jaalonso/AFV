@@ -10,6 +10,7 @@
    - [[#resumen][Resumen]]
  - [[#definiciones-de-tipos-y-funciones][Definiciones de tipos y funciones]]
    - [[#definiciones-de-tipos][Definiciones de tipos]]
+   - [[#definiciones-de-funciones][Definiciones de funciones]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -110,7 +111,7 @@
   + Reconoce las teorías de Isabelle por su extensión (~.thy~). 
   + Procesa las teorías de forma síncrona.
 
-+ Demo: [[./T2_Introduccion.thy][T2_Introduccion.thy]].
++ Demo: [[./Ejemplos/Introduccion.thy][Introduccion.thy]].
   + Comentarios 
   + Inferencia de tipo 
   + Evaluación de términos 
@@ -143,7 +144,7 @@
       ~+ :: 'a ⇒ 'a ⇒ 'a~ 
   + Para resolver las ambigüedades se usan anotaciones:
     ~1::nat, x + (y::nat)~
-  + Demo: [[./T2_Demo_Nat.thy][T2_Demo_Nat.thy]].
+  + Demo: [[./Ejemplos/Naturales.thy][Naturales.thy]].
     + Ejemplo de definición recursiva sobre los naturales: suma.
     + Ejemplo de demostración pos inducción sobre los naturales. 
  
@@ -163,7 +164,7 @@
       cumplen una propiedad P, basta probar que
       + P([])
       + si P(xs) entonces P(x#xs), para todos x, xs.
-    + Demo: [[./T2_Demo_Lista.thy][T2_Demo_Lista.thy]].
+    + Demo: [[./Ejemplos/Listas.thy][Listas.thy]].
       + El tipo de las listas.
       + Funciones sobre listas: conc e inversa.
       + Ejemplo de búqueda descendente de la demostración de 
@@ -282,7 +283,53 @@
   + Los paréntesis externos son obligatorios,
   + Si los patrones son complicados, también lo son las demostraciones
    
-+ Demo: [[./T2_Demo_Arbol.thy][T2_Demo_Arbol.thy]].
++ Demo: [[./Ejemplos/Arboles.thy][Arboles.thy]].
   + Definición del tipo de datos de árboles 
   + Demostración de propiedades de árboles   
   + Ejemplo de función recursiva no primitiva recursiva 
+
++ El tipo ~option~
+  * Su definición es
+    : datatype 'a option = None | Some 'a
+  * Es análogo al tipo ~Maybe~ de Haskell.
+  * Ejemplo de uso ([[./Ejemplos/Opcionales.thy][Opcionales.thy]]): \\
+    ~(busca ps x)~ es el segundo elemento del primer par de ps cuyo
+    primer elemento es x y None si ningún elemento de ps tiene un primer
+    elemento igual a x. Por ejemplo,
+    :      busca [(1::int,2::int),(3,6)] 3 = Some 6
+    :      busca [(1::int,2::int),(3,6)] 2 = None
+    Definición:
+    : fun busca :: "('a × 'b) list ⇒ 'a ⇒ 'b option"
+    : where
+    :   "busca [] x           = None" 
+    : | "busca ((a,b) # ps) x = (if a = x 
+    :                             then Some b 
+    :                             else busca ps x)"
+
+** Definiciones de funciones
+
++ Definiciones no recursivas con *definition*
+  + Ejemplo ([[./Ejemplos/Cuadrado.thy][Cuadrado.thy]]): ~(cuadrado x)~ es el cuadrado de x. Por ejemplo,
+    ~cuadrado 3 = 9~
+    : definition cuadrado :: "int ⇒ int"
+    : where
+    :   "cuadrado n = n*n"
+  + No se admiten patrones del tipo ~f x1 ... xn = ...~
+  + No se admiten funciones que no terminan. Por ejemplo, ~f x = f x + 1~.
+
++ Definiciones generales con *fun*
+  + Rasgos de ~fun~:
+    + Admite patrones sobre los constructores de los tipos de datos.
+    + Importa el orden de las ecuaciones.
+    + Hay que demostrar la terminación.
+    + Genera esquemas de inducción.
+  + Ejemplo: ([[./Ejemplos/Intercala.thy][Intercala.thy]]): ~(intercala x ys)~ es la lista obtenida
+    intercalando x entre los elementos de ys. Por ejemplo, 
+    ~intercala a [x,y,z] = [x, a, y, a, z]~
+    : fun intercala :: "'a ⇒ 'a list ⇒ 'a list" 
+    : where
+    :   "intercala a []       = []" 
+    : | "intercala a [x]      = [x]" 
+    : | "intercala a (x#y#zs) = x # a # intercala a (y#zs)"
+
+
