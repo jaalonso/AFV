@@ -12,7 +12,9 @@
  - [[#definiciones-de-tipos-y-funciones][Definiciones de tipos y funciones]]
    - [[#definiciones-de-tipos][Definiciones de tipos]]
    - [[#definiciones-de-funciones][Definiciones de funciones]]
- - [[#heurísticas-de-inducción][Heurísticas de inducción]]
+ - [[#heurísticas-y-esquemas-de-inducción][Heurísticas y esquemas de inducción]]
+   - [[#heurísticas-básicas-de-inducción][Heurísticas básicas de inducción:]]
+   - [[#esquemas-de-inducción][Esquemas de inducción]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -350,47 +352,47 @@
     : f([],x1,...,xk)   = g(x1,...,xk) 
     : f(x#xs,x1,...,xk) = h(f(xs,x1,...,xk),x,x1,...,xk)
 
-* Heurísticas de inducción
+* Heurísticas y esquemas de inducción
 
-+ Heurísticas básicas de inducción:
-  + 1ª heurística: Las propiedades de las funciones recursivas se demuestran
-    por inducción.
-  + 2ª heurística: La prueba por inducción de una propiedad de la función f es
-    sobre el i-ésimo argumento de f si f esrá definida por recursión en el
-    argumento i.
-  + 3ª heurística: Generalizar las propiedades:
-    + Sustituir constantes por variables.
-    + Generalizar las variables libres:
-      + usando ~arbitrary~ en demostraciones por inducción
-      + usando cuantificadores universales en la fórmula 
-  + Ejemplo: [[./Ejemplos/Induccion.thy][Induccion.thy]]
+** Heurísticas básicas de inducción:
++ 1ª heurística: Las propiedades de las funciones recursivas se demuestran
+  por inducción.
++ 2ª heurística: La prueba por inducción de una propiedad de la función f es
+  sobre el i-ésimo argumento de f si f esrá definida por recursión en el
+  argumento i.
++ 3ª heurística: Generalizar las propiedades:
+  + Sustituir constantes por variables.
+  + Generalizar las variables libres:
+    + usando ~arbitrary~ en demostraciones por inducción
+    + usando cuantificadores universales en la fórmula 
++ Ejemplo: [[./Ejemplos/Induccion.thy][Induccion.thy]]
 
-+ Inducción general
-  + Hasta ahora la inducción ha sido simple porque correspondía a funciones
-    primitivas recursivas.
-    + Se añade un constructor en cada ecuación de la inducción.
-    + Se elimina un constructor en cada paso de la recursión.
-  + Ejemplo general
-    + (mitad x) es la mitad del número natural x. Por ejemplo,  
-      : mitad (Suc (Suc (Suc (Suc 0)))) = Suc (Suc 0) 
-      : mitad (Suc (Suc (Suc 0)))       = Suc 0
-      su definición es 
-      : fun mitad :: "nat ⇒ nat" 
-      : where
-      :   "mitad 0             = 0" 
-      : | "mitad (Suc 0)       = 0" 
-      : | "mitad (Suc (Suc n)) = 1 + mitad n"
-    + El esquema de inducción correspondiente a la función mitad es
-      : ⟦P 0; P (Suc 0); ⋀n. P n ⟹ P (Suc (Suc n))⟧ ⟹ P a
-      es decir, para demostrar que todo número a tiene la propiedad P basta
-      demostrar que:
-      + 0 tiene la propiedad P
-      + (Suc 0) tiene la propiedad P
-      + si n tiene la propiedad P, entonces (Suc (Suc n)) también la tiene.
-      Su nombre es ~mitad.induct~
-    + Ejemplo de demostración por inducción general:
-      : lemma "2 * mitad n ≤ n"
-      : apply (induction n rule: mitad.induct)
-      : apply auto
-      : done
-  + Ejemplo: [[./Ejemplos/InduccionGeneral.thy][InduccionGeneral.thy]].
+** Esquemas de inducción
++ Hasta ahora la inducción ha sido simple porque correspondía a funciones
+  primitivas recursivas.
+  + Se añade un constructor en cada ecuación de la inducción.
+  + Se elimina un constructor en cada paso de la recursión.
++ Ejemplo general
+  + (mitad x) es la mitad del número natural x. Por ejemplo,  
+    : mitad (Suc (Suc (Suc (Suc 0)))) = Suc (Suc 0) 
+    : mitad (Suc (Suc (Suc 0)))       = Suc 0
+    su definición es 
+    : fun mitad :: "nat ⇒ nat" 
+    : where
+    :   "mitad 0             = 0" 
+    : | "mitad (Suc 0)       = 0" 
+    : | "mitad (Suc (Suc n)) = 1 + mitad n"
+  + El esquema de inducción correspondiente a la función mitad es
+    : ⟦P 0; P (Suc 0); ⋀n. P n ⟹ P (Suc (Suc n))⟧ ⟹ P a
+    es decir, para demostrar que todo número a tiene la propiedad P basta
+    demostrar que:
+    + 0 tiene la propiedad P
+    + (Suc 0) tiene la propiedad P
+    + si n tiene la propiedad P, entonces (Suc (Suc n)) también la tiene.
+    Su nombre es ~mitad.induct~
+  + Ejemplo de demostración por inducción general:
+    : lemma "2 * mitad n ≤ n"
+    : apply (induction n rule: mitad.induct)
+    : apply auto
+    : done
++ Ejemplo: [[./Ejemplos/InduccionGeneral.thy][InduccionGeneral.thy]].
