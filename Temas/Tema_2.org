@@ -13,7 +13,7 @@
    - [[#definiciones-de-tipos][Definiciones de tipos]]
    - [[#definiciones-de-funciones][Definiciones de funciones]]
  - [[#heurísticas-y-esquemas-de-inducción][Heurísticas y esquemas de inducción]]
-   - [[#heurísticas-básicas-de-inducción][Heurísticas básicas de inducción:]]
+   - [[#heurísticas-de-inducción][Heurísticas de inducción]]
    - [[#esquemas-de-inducción][Esquemas de inducción]]
 
 * Visión panorámica de Isabelle/HOL
@@ -354,7 +354,7 @@
 
 * Heurísticas y esquemas de inducción
 
-** Heurísticas básicas de inducción:
+** Heurísticas de inducción
 + 1ª heurística: Las propiedades de las funciones recursivas se demuestran
   por inducción.
 + 2ª heurística: La prueba por inducción de una propiedad de la función f es
