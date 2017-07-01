@@ -475,29 +475,29 @@
 + Expresiones con /if/
   + Las expresiones con /if/ se simplifican automáticamente.
   + Por ejemplo, 
-    ~P (if A then s else t)~ 
+    + ~P (if A then s else t)~ 
     se simplifica a 
-    ~(A ⟶ P s) ∧ (¬A ⟶ P t)~
+    + ~(A ⟶ P s) ∧ (¬A ⟶ P t)~
 
 + Expresiones con /case/
   + Las expresiones con /case/ no se simplifican automáticamente.
   + Por ejemplo, para simplificar
-    ~P (case e of 0 ⇒ a | Suc n ⇒ b)~
+    + ~P (case e of 0 ⇒ a | Suc n ⇒ b)~
     se necesita aplicar ~simp split: nat.split~ y se obtiene 
-    ~(e = 0 ⟶ P(a)) ∧ (∀ n. e = Suc n ⟶ P(b))~
+    + ~(e = 0 ⟶ P(a)) ∧ (∀ n. e = Suc n ⟶ P(b))~
   + Análogamente, para un tipo de dato ~t~ se usa ~t.split~
 
 + Expresiones con pares
   + Para simplificar 
-    ~P (case t of (x, y) ⇒ u x y)~
+    + ~P (case t of (x, y) ⇒ u x y)~
     se necesita aplicar ~simp split: prod.split~ y se obtiene 
-    ~∀ x y. t = (x, y) ⟶ P (u x y)~
+    + ~∀ x y. t = (x, y) ⟶ P (u x y)~
 
 + Expresiones con pares y let
   + Para simplificar 
-    ~P (let (x, y) = t in u x y)~
+    + ~P (let (x, y) = t in u x y)~
     se necesita aplicar ~simp split: prod.split~ y se obtiene 
-    ~∀ x y. t = (x, y) ⟶ P (u x y)~
+    + ~∀ x y. t = (x, y) ⟶ P (u x y)~
 
 + Ejemplos: [[./Ejemplos/Simplificacion4.thy][Simplificacion4.thy]]
 
@@ -520,7 +520,7 @@
 + Isabelle aplica casi ciegamente las reglas de simplificación.
 
 + Una regla condicional
-  ~〚 P1; ...; Pk 〛⟹ i = d~
+  + ~〚 P1; ...; Pk 〛⟹ i = d~
   es aceptable como regla de simplificación si ~i~ es "mayor" que ~d~ y que cada
   una de ls condiciones ~Pi~
 
