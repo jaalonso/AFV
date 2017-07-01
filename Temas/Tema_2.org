@@ -364,3 +364,33 @@
       + usando ~arbitrary~ en demostraciones por inducción
       + usando cuantificadores universales en la fórmula 
   + Ejemplo: [[./Ejemplos/Induccion.thy][Induccion.thy]]
+
++ Inducción general
+  + Hasta ahora la inducción ha sido simple porque correspondía a funciones
+    primitivas recursivas.
+    + Se añade un constructor en cada ecuación de la inducción.
+    + Se elimina un constructor en cada paso de la recursión.
+  + Ejemplo general
+    + (mitad x) es la mitad del número natural x. Por ejemplo,  
+      : mitad (Suc (Suc (Suc (Suc 0)))) = Suc (Suc 0) 
+      : mitad (Suc (Suc (Suc 0)))       = Suc 0
+      su definición es 
+      : fun mitad :: "nat ⇒ nat" 
+      : where
+      :   "mitad 0             = 0" 
+      : | "mitad (Suc 0)       = 0" 
+      : | "mitad (Suc (Suc n)) = 1 + mitad n"
+    + El esquema de inducción correspondiente a la función mitad es
+      : ⟦P 0; P (Suc 0); ⋀n. P n ⟹ P (Suc (Suc n))⟧ ⟹ P a
+      es decir, para demostrar que todo número a tiene la propiedad P basta
+      demostrar que:
+      + 0 tiene la propiedad P
+      + (Suc 0) tiene la propiedad P
+      + si n tiene la propiedad P, entonces (Suc (Suc n)) también la tiene.
+      Su nombre es ~mitad.induct~
+    + Ejemplo de demostración por inducción general:
+      : lemma "2 * mitad n ≤ n"
+      : apply (induction n rule: mitad.induct)
+      : apply auto
+      : done
+  + Ejemplo: [[./Ejemplos/InduccionGeneral.thy][InduccionGeneral.thy]].
