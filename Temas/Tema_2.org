@@ -15,6 +15,15 @@
  - [[#heurísticas-y-esquemas-de-inducción][Heurísticas y esquemas de inducción]]
    - [[#heurísticas-de-inducción][Heurísticas de inducción]]
    - [[#esquemas-de-inducción][Esquemas de inducción]]
+ - [[#simplificación][Simplificación]]
+   - [[#reglas-de-simplificación][Reglas de simplificación]]
+   - [[#ejemplos-de-simplificación][Ejemplos de simplificación]]
+   - [[#método-de-simplificación-simp][Método de simplificación (/simp/)]]
+   - [[#reescritura-condicional][Reescritura condicional:]]
+   - [[#reescritura-con-definiciones][Reescritura con definiciones]]
+   - [[#distinción-de-casos][Distinción de casos]]
+   - [[#comparación-de-auto-y-simp][Comparación de /auto/ y /simp/]]
+   - [[#terminación][Terminación]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -396,3 +405,123 @@
     : apply auto
     : done
 + Ejemplo: [[./Ejemplos/InduccionGeneral.thy][InduccionGeneral.thy]].
+
+* Simplificación
+
+** Reglas de simplificación
+
++ La regla de simplificación correspondiente a la ecuación ~i = d~ consiste
+  en reemplazar ~i~ por ~d~.
+
++ A veces, se usa /regla de reescritura/ en lugar de regla de
+  simplificación y /reescritura/ en lugar de simplificación.
+
+** Ejemplos de simplificación
+
++ Se consideran las siguientes reglas: 
+  : 1. 0 + n           = n
+  : 2. (Suc m) + n     = Suc (m + n)
+  : 3. (Suc m ≤ Suc n) = (m ≤ n)
+  : 4. (0 ≤ m)         = True
+
++ La simplificación de ~0 + Suc 0 ≤ (Suc 0) + x~ con las reglas anteriores es 
+  :   0 + Suc 0 ≤ (Suc 0) + x
+  : = Suc 0 ≤ (Suc 0) + x        [por 1]
+  : = Suc 0 ≤ Suc (0 + x)        [por 2]
+  : = 0 ≤ 0 + x                  [por 3]
+  : = True                       [por 4]
+
+** Método de simplificación (/simp/)
+
++ El efecto de ~apply (simp add: ec1 ... ecn)~ sobre el objetivo 
+  ~〚 P1; ...; Pk 〛⟹ C~ es la simplificación de ~P1~, ..., ~Pk~ y ~C~ usando
+  + los lemas con atributo /simp/
+  + las reglas correspondientes a *fun* y *datatype*
+  + las reglas correspondientes a las ecuaciones ~ec1~, ..., ~ecn~
+  + los supuestos ~P1~, ..., ~Pk~
+
++ El efecto de ~apply (simp del: ec1 ... ecn)~ es análogo salvo que no se
+  aplica las reglas de simplificación correspondientes a las ecuaciones  ~ec1~,
+  ..., ~ecn~ 
+
++ Ejemplos: [[./Ejemplos/Simplificacion1.thy][Simplificacion1.thy]]
+ 
+** Reescritura condicional:
+
++ La forma de las reglas de reescritura condicional es
+  :〚 P1; ...; Pk 〛⟹ i = d
+
++ Una regla de reescritura condicional es aplicable sólo si se han demostrado
+  sus condiciones. 
+
++ Ejemplo: con las reglas 
+  : p(0) = True
+  : p(x) ⟹ f(x) = g(x)
+  + se puede simplificar f(0) a g(0)
+  + no se puede simplificar f(1) a g(1)
+
++ Ejemplos: [[./Ejemplos/Simplificacion2.thy][Simplificacion2.thy]]
+
+** Reescritura con definiciones
+
++ Para aplicar la definición de una función ~f~ definida con *definition* es
+  necesario añadir su regla de simplificación:
+  : (simp add: f_def ...)
+
++ Ejemplos: [[./Ejemplos/Simplificacion3.thy][Simplificacion3.thy]]
+
+** Distinción de casos
+
++ Expresiones con /if/
+  + Las expresiones con /if/ se simplifican automáticamente.
+  + Por ejemplo, 
+    : P(if A then s else t)
+    se simplifica a
+    : (A ⟶ P(s)) ∧ (¬A ⟶ P(t))
+
++ Expresiones con /case/
+  + Las expresiones con /case/ no se simplifican automáticamente.
+  + Por ejemplo, para simplificar
+    : P (case e of 0 ⇒ a | Suc n ⇒ b)
+    se necesita aplicar ~simp split: nat.split~ y se obtiene 
+    : (e = 0 ⟶ P(a)) ∧ (∀ n. e = Suc n ⟶ P(b))
+  + Análogamente, para un tipo de dato ~t~ se usa ~t.split~
+
++ Expresiones con pares
+  + Para simplificar cualquiera de las siguientes expresiones
+    : P (let (x, y) = t in u x y)
+    : P (case t of (x, y) ⇒ u x y)
+    se necesita aplicar ~simp split: prod.split~ y se obtiene 
+    : ∀ x y. t = (x, y) ⟶ P (u x y)
+
++ Ejemplos: [[./Ejemplos/Simplificacion4.thy][Simplificacion4.thy]]
+
+** Comparación de /auto/ y /simp/
+
++ /simp/ se aplica sólo al primer subobjetivo y /auto/ a todos.
++ /auto/ aplica /simp/ y más.
++ /auto/ se puede modificar:
+  : (auto simp add: ... del: ...)
+
+** Terminación
+
++ La simplificación puede no terminar.
+
++ Ejemplo: Con las reglas 
+  + f(x) = g(x)
+  + g(x) = f(x)
+  la simplificación de f(0) no termina.
+
++ Isabelle aplica casi ciegamente las reglas de simplificación.
+
++ Una regla condicional
+  :〚 P1; ...; Pk 〛⟹ i = d
+  es aceptable como regla de simplificación si ~i~ es "mayor" que ~d~ y que cada
+  una de ls condiciones ~Pi~
+
++ Ejemplos: 
+  + ~n < m ⟹ (n < Suc m) = True~ es aceptable
+  + ~Suc n < m ⟹ (n < m) = True~ no es aceptable
+
+
++ Ejemplo [[./Ejemplos/Simplificacion.thy][Simplificacion.thy]]
