@@ -475,8 +475,8 @@
 + Expresiones con /if/
   + Las expresiones con /if/ se simplifican automáticamente.
   + Por ejemplo, \\ 
-    ~P (if A then s else t)~
-    se simplifica a
+    ~P (if A then s else t)~ \\
+    se simplifica a \\
     ~(A ⟶ P s) ∧ (¬A ⟶ P t)~
 
 + Expresiones con /case/
