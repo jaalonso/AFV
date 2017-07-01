@@ -448,8 +448,8 @@
  
 ** Reescritura condicional:
 
-+ La forma de las reglas de reescritura condicional es
-  :〚 P1; ...; Pk 〛⟹ i = d
++ La forma de las reglas de reescritura condicional es \\
+  ~〚 P1; ...; Pk 〛⟹ i = d~
 
 + Una regla de reescritura condicional es aplicable sólo si se han demostrado
   sus condiciones. 
@@ -465,8 +465,8 @@
 ** Reescritura con definiciones
 
 + Para aplicar la definición de una función ~f~ definida con *definition* es
-  necesario añadir su regla de simplificación:
-  : (simp add: f_def ...)
+  necesario añadir su regla de simplificación: \\
+  ~(simp add: f_def ...)~
 
 + Ejemplos: [[./Ejemplos/Simplificacion3.thy][Simplificacion3.thy]]
 
@@ -474,10 +474,10 @@
 
 + Expresiones con /if/
   + Las expresiones con /if/ se simplifican automáticamente.
-  + Por ejemplo, 
-    : P(if A then s else t)
+  + Por ejemplo, \\ 
+    ~P (if A then s else t)~
     se simplifica a
-    : (A ⟶ P(s)) ∧ (¬A ⟶ P(t))
+    ~(A ⟶ P s) ∧ (¬A ⟶ P t)~
 
 + Expresiones con /case/
   + Las expresiones con /case/ no se simplifican automáticamente.
