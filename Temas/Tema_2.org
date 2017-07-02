@@ -24,6 +24,7 @@
    - [[#distinción-de-casos][Distinción de casos]]
    - [[#comparación-de-auto-y-simp][Comparación de /auto/ y /simp/]]
    - [[#terminación][Terminación]]
+   - [[#2-relación-de-ejercicios-r02solthy][2ª relación de ejercicios (R02Sol.thy):]]
 
 * Visión panorámica de Isabelle/HOL
 
@@ -529,3 +530,12 @@
   + ~Suc n < m ⟹ (n < m) = True~ no es aceptable
 
 + Ejemplo [[./Ejemplos/Simplificacion.thy][Simplificacion.thy]]
+
+** 2ª relación de ejercicios ([[../Ejercicios/R01Sol.thy][R02Sol.thy]]):
++ Plegados sobre árboles.
++ Alineamientos de lista.
++ Plegado de listas.
++ Lista con elementos distintos.  
++ Plegados de listas por la derecha y por la izquierda.
++ Cortes de listas.
+
