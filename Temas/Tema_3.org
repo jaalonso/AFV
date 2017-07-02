@@ -1,0 +1,18 @@
+#+TITLE: Tema 3: Caso de estudio (Árboles binarios de búsqueda)
+#+LANGUAGE: es
+
+* Contenido                                                        :TOC_2_gh:
+ - [[#nociones-de-la-teoría-de-conjuntos][Nociones de la teoría de conjuntos]]
+
+* Nociones de la teoría de conjuntos
+
++ El tipo de los conjuntos (con elementos de tipo a) es ~'a set~
+
++ En la teoría están definidas las operaciones y relaciones conjuntistas
+  básicas: a ∈ A, A ∪ B, ...
+
++ La cuantificación acotada se representa por ∀a∈A. P
+
++ El método /auto/ se aplica a expresiones conjuntistas.
+
+ 
