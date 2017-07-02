@@ -20,6 +20,7 @@ los trabajos anteriores son
 * Temas
 ** [[./Temas/Tema_1.org][Tema 1: Introducción]].
 ** [[./Temas/Tema_2.org][Tema 2: Programación y demostración]].
+** [[./Temas/Tema_2.org][Tema 3: Caso de estudio (Árboles binarios de búsqueda)]].
 
 * Ejercicios
 
