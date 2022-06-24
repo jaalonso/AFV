@@ -27,7 +27,7 @@ text {* El esquema de inducción correspondiente a la función mitad es
   · (Suc 0) tiene la propiedad P
   · si n tiene la propiedad P, entonces (Suc (Suc n)) también la tiene.
 *}
-thm mitad.induct
+thm mitad.induct [no_vars]
 
 text {* Prop.: Para todo n, 2 * mitad n \<le> n *}
 lemma "2 * mitad n \<le> n"
@@ -62,7 +62,7 @@ text {* El esquema de inducción correspondiente a la función intercala es
   · para todo a, x, y, zs, si el par (a,y#zs) tiene la propiedad P
     entonces el par (a,x#y#zs) tiene la propiedad P.
 *}
-thm intercala.induct
+thm intercala.induct [no_vars]
 
 text {* Prop.: Aplicar la función f al resultado de intercalar a en xs
   es lo mismo que intercalar (f a) en las imágenes de xs mediante f. *} 

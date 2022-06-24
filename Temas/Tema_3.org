@@ -3,6 +3,8 @@
 
 * Contenido                                                        :TOC_2_gh:
  - [[#nociones-de-la-teoría-de-conjuntos][Nociones de la teoría de conjuntos]]
+ - [[#la-librería-de-los-árboles-binarios][La librería de los árboles binarios]]
+ - [[#clases-de-tipos-en-isabelle][Clases de tipos en Isabelle]]
 
 * Nociones de la teoría de conjuntos
 
@@ -15,4 +17,95 @@
 
 + El método /auto/ se aplica a expresiones conjuntistas.
 
+* La librería de los árboles binarios
+
++ La librería de árboles binarios es ~Tree.thy~ y se encuentra:
+  + localmente: [[/usr/local/lib/Isabelle2016/src/HOL/Library/Tree.thy][/usr/local/lib/Isabelle2016/src/HOL/Library/Tree.thy]]
+  + en la Red: https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Tree.html
  
++ El tipo de los árboles binarios es
+  : datatype 'a tree = Leaf | Node ('a tree) 'a ('a tree)
+
++ Se usan las siguientes abreviaturas:
+  + ~〈〉~ en lugar de ~Leaf~
+  + ~〈i,x,d〉~ en lugar de ~Node i x d~
+
++ Número de nodos de un árbol:
+  + ~(size t)~ es el número de nodos del árbol ~t~
+  + Definición:
+    : size :: 'a tree ⇒ nat
+    : size ⟨⟩        = 0
+    : size ⟨i, _, d⟩ = size i + size d + 1
+
++ Recorrido inorden:
+  + ~(inorder t)~ es el recorrido inorden del árbol ~t~
+  + Definición
+    : inorder :: 'a tree ⇒ 'a list
+    : inorder ⟨⟩        = []
+    : inorder ⟨i, x, d⟩ = inorder i @ [x] @ inorder d
+
++ Conjunto de elementos de un árbol:
+  + ~(set_tree t)~ es el conjunto de los elementos del árbol ~t~
+  + Definición:
+    : set_tree :: 'a tree ⇒ 'a set
+    : set_tree ⟨⟩        = {}
+    : set_tree ⟨i, x, d⟩ = set_tree i ∪ {x} ∪ set_tree d
+
++ Aplicación de una función a los elementos de un árbol:
+  + ~(map_tree f t)~ es el árbol obtenido aplicando la función ~f~ a los
+    elementos del árbol ~t~
+  + Definición:
+    : map_tree :: ('a ⇒ 'b) ⇒ 'a tree ⇒ 'b tree
+    : map_tree f ⟨⟩        = ⟨⟩
+    : map_tree f ⟨i, x, d⟩ = ⟨map_tree f i, f x, map_tree f d⟩
+
++ Árboles binarios de búsqueda
+  + ~(bst t~ se verifica si ~t~ es un árbol binario de búsqueda.
+  + Definición:
+    : bst :: 'a tree ⇒ bool where
+    : bst ⟨⟩        = True 
+    : bst ⟨i, x, d⟩ = bst i ∧ 
+    :                 bst d ∧ 
+    :                 (∀y∈set_tree i. y < x) ∧ 
+    :                 (∀y∈set_tree d. x < y)
+
+* Clases de tipos en Isabelle
+
++ Una /clase de tipos/ se define especificando
+  + un conjuntos de funciones de la clase (el /interfaz/)
+  + un conjuntos de axiomas sobre dichas funciones
+
++ Ejemplo: La clase de los órdenes lineaales (/linorder/) está definida en la
+  teoría [[https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Orderings.html][Orderings.thy]] por
+  : class ord =
+  :   fixes less_eq :: "'a ⇒ 'a ⇒ bool"
+  :     and less :: "'a ⇒ 'a ⇒ bool"
+  : 
+  : notation
+  :   less_eq  ("(_/ ≤ _)"  [51, 51] 50) and
+  :   less     ("(_/ < _)"  [51, 51] 50)
+  : 
+  : class preorder = ord +
+  :   assumes less_le_not_le: "x < y ⟷ x ≤ y ∧ ¬ (y ≤ x)"
+  :   and order_refl [iff]: "x ≤ x"
+  :   and order_trans: "x ≤ y ⟹ y ≤ z ⟹ x ≤ z"
+  : 
+  : class order = preorder +
+  :   assumes antisym: "x ≤ y ⟹ y ≤ x ⟹ x = y"
+  : 
+  : class linorder = order +
+  :   assumes linear: "x ≤ y ∨ y ≤ x"
+
++ Un tipo pertenece a una clase de tipos si:
+  + todas las funciones de la clase están definidas para el tipo y
+  + se verifican los axiomas de la clase para las funciones del tipo (necesita
+    demostración). 
+
++ Notación: 
+  ~τ :: C~ significa que el tipo ~τ~ pertenece a la clase ~C~
+
++ Ejemplo: La signatura 
+  ~bst :: ('a :: linorder) tree ⇒ bool~ significa que los elementos del árbol
+  están totalmente ordenados.
+
++ Demo: [[./Ejemplos/ABB.thy][ABB.thy]]

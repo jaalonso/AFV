@@ -1,6 +1,6 @@
 #+TITLE: Algorítmica funcional verificada (AFV)
 #+OPTIONS: toc:nil 
-
+ 
 El objetivo de este trabajo es verificar con Isabelle/HOL la segunda parte del
 curso de [[https://www.cs.us.es/~jalonso/cursos/i1m/temas.php][I1M]]. Más concretamente, los temas 14 a 22 dedicados a la
 representación funcional de estructuras de datos.

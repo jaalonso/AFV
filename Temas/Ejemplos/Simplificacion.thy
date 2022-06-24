@@ -93,7 +93,7 @@ text {* Las reglas de algebra_simps son
   a * (b - c) = a * b - a * c
   (a - b) * c = a * c - b * c
 *}
-thm algebra_simps
+thm algebra_simps [no_vars]
 
 text {* Declaración de reglas como de simplificación *}
 declare algebra_simps [simp]
